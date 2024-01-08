@@ -20,6 +20,17 @@ function updateTime() {
       "h:mm:ss [<small>]A[<small>]"
     );
   }
+  //Asia/Kabul
+  let city3Element = document.getElementById("city3");
+  if (city3Element) {
+    let city3DateElement = city3Element.querySelector(".date");
+    let city3TimeElement = city3Element.querySelector(".time");
+    let kabulTimeDate = moment().tz("Asia/Kabul");
+    city3DateElement.innerHTML = kabulTimeDate.format("MMMM Do YYYY");
+    city3TimeElement.innerHTML = kabulTimeDate.format(
+      "h:mm:ss [<small>]A[<small>]"
+    );
+  }
 }
 
 updateTime();
@@ -46,5 +57,6 @@ function updateCity(event) {
     "A"
   )}</small></div>
   </div>
+  <div><a href="/">See World Clock Again</a></div>
   `;
 }
